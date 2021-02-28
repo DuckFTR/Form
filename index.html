@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Анкета</title>
+    <style>
+        label {
+            display: block;
+            margin: 30px 20px;
+        }
+
+        .fieldset {
+            display: none;
+        }
+
+        .fieldset--active {
+            border: 2px solid #3a00ff;
+            border-radius: 150px;
+            display: block;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        .results {
+            font-size: 20px;
+            display: flex;
+            flex-direction: column;
+            left: 20px;
+        }
+    </style>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+
+</head>
+<body>
+<form method="get">
+    <div class="container form-group mb-3">
+        <fieldset class="fieldset--active">
+            <legend>Основная информация</legend>
+            <div class="mb-3"><label class="form-label">
+                Представьтесь, пожалуйста:
+                <input type="text" placeholder="Роман, Роман Михайлович" name="name" class="form-control" required>
+            </label>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">
+                    Ваш возраст
+                    <input type="number" name="age" value="" placeholder="0-100" class="form-control">
+                </label>
+            </div>
+
+
+        </fieldset>
+
+        <fieldset class="fieldset">
+            <legend>Контактная информация</legend>
+            <div class="mb-3">
+                <label class="form-label">
+                    Укажите почту для обратной связи
+                    <input type="text" name="email" placeholder="example@gmail.com" class="form-control" required>
+                </label>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">
+                    Контактный номер телефона
+                    <input type="tel" name="telephone_number" value="" placeholder="+7(***)-***-**-**"
+                           class="form-control">
+                </label>
+            </div>
+
+        </fieldset>
+
+        <fieldset class="fieldset">
+            <div class="mb-3">
+                <legend>Ваш пол</legend>
+                <label class="form-check-label">
+                    Мужчина
+                    <input type="radio" name="sex" value="man" class="form-check-input">
+                </label>
+            </div>
+            <div class="mb-3">
+                <label class="form-check-label">
+                    Женщина
+                    <input type="radio" name="sex" value="woman" class="form-check-input">
+                </label>
+            </div>
+
+        </fieldset>
+
+        <fieldset class="fieldset">
+
+            <legend>Откуда Вы</legend>
+            <div class="mb-3">
+                <label class="form-label"> Ваша страна
+                    <select name="country" class="form-control">
+                        <option value="Россия">Россия</option>
+                        <option value="Украина">Украина</option>
+                        <option value="США">США</option>
+                        <option value="Европа">Европа</option>
+                        <option value="Азия">Азия</option>
+                        <option value="">другая</option>
+                    </select>
+                </label>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label"> Ваш город
+                    <select name="city" class="form-control">
+                        <option value="Москва">Москва</option>
+                        <option value="Санкт-Петербург">Санкт-Петербург</option>
+                        <option value="Ростов-на-Дону">Ростов-на-Дону</option>
+                        <option value="Тверь">Тверь</option>
+                        <option value="Краснодар">Краснодар</option>
+                        <option value="другой">другой</option>
+                    </select>
+                </label>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">
+                    Ваш домашний адрес
+                    <input type="text" name="address" placeholder="Ул.Мира, д.14" class="form-control">
+                </label>
+            </div>
+
+        </fieldset>
+
+        <fieldset class="fieldset">
+            <div class="mb-3">
+                <label class="form-label">
+                    Ваш любимый цвет
+                    <input type="color" name="color" value="" class="form-control">
+                </label>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">
+                    Ваше хобби
+                    <input type="text" name="hobby" value="" class="form-control">
+                </label>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">
+                    Ваши цели на жизнь
+                    <input type="text" name="hobby" value="" class="form-control">
+                </label>
+            </div>
+            <legend> Информация о Вас</legend>
+
+        </fieldset>
+    </div>
+    <div class="container form-group mb-3">
+        <button type="button" name="forward" id="forward" class="btn btn-primary">Далее</button>
+        <button type="button" name="back" id="backward" class="btn btn-outline-secondary">Назад</button>
+        <button type="reset" class="btn btn-outline-secondary">Сбросить</button>
+        <button type="submit" name="finish" id="finish" class="btn btn-primary">Завершить</button>
+    </div>
+    <div class="container">
+        <div class="results mb-3 font-monospace"></div>
+    </div>
+
+    <script src="script.js"></script>
+</form>
+
+</body>
+</html>
