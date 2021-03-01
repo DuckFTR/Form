@@ -40,9 +40,10 @@ document.addEventListener('DOMContentLoaded', () => {
         pressBackward();
     });
 
-    //валидация
+    //валидация и выполнение вывода значений
     document.getElementById('finish').addEventListener('click', () => {
         let validated = true;
+
 
         document.querySelectorAll('[required]').forEach((item) => {
             if (item.value.length < 2) {
@@ -51,38 +52,38 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         if (!validated) {
-            alert('Заполните поле "имя" и/или "Почта"');
+            alert('Заполните поле "Имя" и/или "Почта"');
+        }
+
+        if (validated===true) {
+            //FINISH HIM!
+            //нашли и определили перем с кнопкой завершить
+            let finish = document.getElementById('finish');
+
+            //функция к кнопке финиш
+            function pressFinish() {
+                //Объявляем постоянную и кладем в нее активный филдсет
+                const field = document.querySelector('.fieldset--active');
+                //скрываем филдсет
+                field.classList.add('fieldset');
+                field.classList.remove('fieldset--active');
+
+                //объявляем переменную и втыкаем туда нодлист со всеми значеними элементов
+                let results = document.querySelectorAll('input, select');
+                console.log(results);
+
+                //Находим див в документе
+                let Res = document.querySelector('.results');
+
+                //проходим по каждому объектув нодлисте results и выводим каждое его значение в хтмл
+                results.forEach((obj) => {
+                    Res.insertAdjacentHTML('beforeend', '<br>' + obj.value);
+                });
+            }
+
+            finish.addEventListener('click', () => {
+                pressFinish();
+            });
         }
     });
-
-    //FINISH HIM!
-    //нашли и определили перем с кнопкой завершить
-    let finish = document.getElementById('finish');
-
-    //функция к кнопке финиш
-    function pressFinish() {
-        //Объявляем постоянную и кладем в нее активный филдсет
-        const field = document.querySelector('.fieldset--active');
-        //скрываем филдсет
-        field.classList.add('fieldset');
-        field.classList.remove('fieldset--active');
-
-
-        //объявляем переменную и втыкаем туда нодлист со всеми значеними элементов
-        let results = document.querySelectorAll('input, select');
-        console.log(results);
-
-        //Находим див в документе
-        let Res = document.querySelector('.results');
-
-        //проходим по каждому объектув нодлисте results и выводим каждое его значение в хтмл
-        results.forEach((obj) => {
-            Res.insertAdjacentHTML('beforeend', '<br>' + obj.value);
-        });
-    }
-
-    finish.addEventListener('click', () => {
-        pressFinish();
-    });
-
 });

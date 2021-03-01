@@ -30,6 +30,7 @@
             font-size: 20px;
             display: flex;
             flex-direction: column;
+            text-align: left;
             left: 20px;
         }
     </style>
@@ -78,8 +79,8 @@
         </fieldset>
 
         <fieldset class="fieldset">
+            <legend>Ваш пол</legend>
             <div class="mb-3">
-                <legend>Ваш пол</legend>
                 <label class="form-check-label">
                     Мужчина
                     <input type="radio" name="sex" value="man" class="form-check-input">
@@ -161,7 +162,7 @@
         <button type="button" name="forward" id="forward" class="btn btn-primary">Далее</button>
         <button type="button" name="back" id="backward" class="btn btn-outline-secondary">Назад</button>
         <button type="reset" class="btn btn-outline-secondary">Сбросить</button>
-        <button type="submit" name="finish" id="finish" class="btn btn-primary">Завершить</button>
+        <button type="button" name="finish" id="finish" class="btn btn-primary">Завершить</button>
     </div>
     <div class="container">
         <div class="results mb-3 font-monospace"></div>
