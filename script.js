@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 field.classList.remove('fieldset--active');
 
                 //объявляем переменную и втыкаем туда нодлист со всеми значеними элементов
-                let results = document.querySelectorAll('input, select');
+                let results = document.querySelectorAll('.form-control, input:checked');
                 console.log(results);
 
                 //Находим див в документе
@@ -77,6 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 //проходим по каждому объектув нодлисте results и выводим каждое его значение в хтмл
                 results.forEach((obj) => {
+
                     Res.insertAdjacentHTML('beforeend', '<br>' + obj.value);
                 });
             }
